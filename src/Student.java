@@ -40,7 +40,7 @@ public class Student extends Human {
         setGroup(group);
         setRating(rating);
         setAttendance(attendance);
-        //System.out.println("SConstructor:\t" + Integer.toHexString(hashCode()));
+        System.out.println("SConstructor:\t" + Integer.toHexString(hashCode()));
     }
 public Student(Human human, String speciality, String group, double rating, double attendance)
 {
@@ -51,11 +51,26 @@ public Student(Human human, String speciality, String group, double rating, doub
     setAttendance(attendance);
     //System.out.println("SConstructor:\t" + Integer.toHexString(hashCode()));
 }
-
+public Student(Student other)
+{
+    super(other);
+    this.speciality = other.speciality;
+    this.group = other.group;
+    this.rating = other.rating;
+    this.attendance = other.attendance;
+    System.out.println("SConstructor:\t" + Integer.toHexString(hashCode()));
+}
+public void init(String[] values){
+        super.init(values);
+        speciality = values[4];
+        group = values[5];
+        rating = Double.parseDouble(values[6]);
+        attendance = Double.parseDouble(values[7]);
+}
     @Override
     public String toString() {
-        return super.toString() + " " +
-        speciality + ' ' + group + ' ' + rating + " " + attendance;
+        return super.toString() + ", " +
+        speciality + ", "  + group + ", " + rating + ", " + attendance;
 
     }
 }

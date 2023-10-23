@@ -23,9 +23,17 @@ public class Teacher extends Human
         super(lastName, firstName, age);
         setSpeciality(speciality);
         setExperience(experience);
-        //System.out.println("TConstructor:\t" + Integer.toHexString(hashCode()));
+        System.out.println("TConstructor:\t" + Integer.toHexString(hashCode()));
     }
+
+    @Override
+    public void init(String[] values) {
+        super.init(values);
+        speciality = values[4];
+        experience = Integer.parseInt(values[5].trim());
+    }
+
     public String toString() {
-        return super.toString() + " " + speciality + " " + experience;
+        return super.toString() + ", " + speciality + ", " + experience;
     }
 }

@@ -66,7 +66,7 @@ public Specialist(Specialist other)
 
     @Override
     public String toString() {
-        return super.toString() + grade;
+        return super.toString() + ", " + grade;
     }
 }
 
